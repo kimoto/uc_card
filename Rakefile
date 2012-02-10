@@ -6,11 +6,15 @@ begin
   Jeweler::Tasks.new do |gem|
     gem.name = "uc_card"
     gem.summary = %Q{www.uccard.co.jp Ruby Interface}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.description = %Q{www.uccard.co.jp Ruby Interface}
     gem.email = "sub+peerler@gmail.com"
     gem.homepage = "http://github.com/kimoto/uc_card"
     gem.authors = ["kimoto"]
+    gem.executables = ["uc_card"]
     gem.add_development_dependency "thoughtbot-shoulda"
+    gem.add_dependency 'mechanize'
+    gem.add_dependency 'pit'
+    gem.add_dependency 'nokogiri'
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
 rescue LoadError
