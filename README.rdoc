@@ -26,6 +26,10 @@ Ruby1.9
     puts card
   end
 
+= Note
+証明書のエラーが出る場合は、次のコマンドで証明書のファイルパスを探しだして適切な証明書を入れてください
+  ruby -ropenssl -e "p OpenSSL::X509::DEFAULT_CERT_FILE"
+
 == Copyright
 Copyright (c) 2012 kimoto. See LICENSE for details.
 
