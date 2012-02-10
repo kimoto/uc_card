@@ -1,18 +1,31 @@
 = uc_card
+UCカード(www.uccard.co.jp)の取引履歴に簡易にアクセスするためのライブラリです。
 
-Description goes here.
+= Require
+Ruby1.9
 
-== Note on Patches/Pull Requests
- 
-* Fork the project.
-* Make your feature addition or bug fix.
-* Add tests for it. This is important so I don't break it in a
-  future version unintentionally.
-* Commit, do not mess with rakefile, version, or history.
-  (if you want to have your own version, that is fine but
-   bump version in a commit by itself I can ignore when I pull)
-* Send me a pull request. Bonus points for topic branches.
+= Install
+  $ gem install uc_card
+
+= Usage
+インストールするとuc_cardコマンドが使えるようになりますので、ライブラリとして使わなくてもコマンドとして簡単に使うことができます。
+このコマンドは未払いのクレジットカード取引を一覧して表示してくれるコマンドです。(オプションは一切ない)
+  $ uc_card 
+  2012/01/28: ****** 500 １回払い 1回
+  2012/01/26: ****** 5940 １回払い 1回
+  2012/01/22: ****** 3357 １回払い 1回
+  2012/01/22: ****** 85 １回払い 1回
+  2012/01/21: ****** 1340 １回払い 1回
+  2012/01/21: ****** 250 １回払い 1回
+  2012/01/14: ****** 250 １回払い 1回
+Total: 11722
+
+ライブラリとして使うときは
+  require 'uc_card'
+  UCCard.start_with_pit("uccard.co.jp") do |card|
+    puts card
+  end
 
 == Copyright
-
 Copyright (c) 2012 kimoto. See LICENSE for details.
+
